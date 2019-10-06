@@ -24,9 +24,9 @@
         var onGigyaServiceReady = load;
 
 
-        window.getApps = getApps;
+        window.getAssets = getAssets;
 
-        async function getApps() {
+        async function getAssets() {
 
             //get account 
             var account = await loadAccount();
@@ -49,9 +49,9 @@
 
         function load() {
 
-            gigya.accounts.addEventHandlers({onLogin: getApps});
+            gigya.accounts.addEventHandlers({onLogin: getAssets});
 
-            getApps().catch(err => {
+            getAssets().catch(err => {
                 console.log(err);
                 showRegistration();
             });
@@ -70,10 +70,11 @@
     <a href="#screens" class="header">screens</a>
 
     <a onclick="showRegistration()" href="javascript:void(0);">Login</a>
-    <a onClick="getApps()" href="javascript:void(0);">Assets</a>
+    <a onClick="getAssets()" href="javascript:void(0);">Assets</a>
     <a onClick="openDelegatedAdmin()" href="javascript:void(0);"> Manage organization</a>
     <a onclick="showSelfRegistration()" href="javascript:void(0);">Request organization</a>
     <a onclick="showAccountJson()" href="javascript:void(0);">Show account as json</a>
+    <a  href="https://github.com/dinavinter/b2b-portal">Source Code</a>
 
     <!--    <a onclick="logout()" href="javascript:void(0);">Logout</a>
             <a onclick="showProfile()" href="javascript:void(0);">Show profile</a>
@@ -94,9 +95,9 @@
     </h5>
 
     <br/> <br/> <br/>
-
-
+ 
     <div style="margin-left:100">
+        
     <div id="div">
 
     </div>

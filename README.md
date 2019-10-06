@@ -6,9 +6,9 @@
   
 
 **Working on remote site**
-Demo published to https://dinavinter.github.io/b2b-training-demo
+browse test https://dinavinter.github.io/b2b-portal/index.html
 
-To avoid CORS errors launch chrome with the following command:
+To avoid CORS errors (auth token call) launch chrome with the following command:
 
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp  https://dinavinter.github.io/b2b-training-demo
 
