@@ -5,12 +5,12 @@
 * Enable site under "Organization management"
   
 
-**Working on remote site**
-browse test https://dinavinter.github.io/b2b-portal/index.html
+**Working remotely**
+if you don't use assets simply browse test https://dinavinter.github.io/b2b-portal/index.html
 
-To avoid CORS errors (auth token call) launch chrome with the following command:
+if you do, to avoid CORS errors launch chrome with the following command:
 
-"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp  https://dinavinter.github.io/b2b-training-demo
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp  https://dinavinter.github.io/b2b-portal/index.html
 
 ********** **Config** **********
 * Go to 'Auth Service Config' 
