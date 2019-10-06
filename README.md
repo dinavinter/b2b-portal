@@ -8,7 +8,7 @@
 **Working remotely**
 if you don't use assets simply browse test https://dinavinter.github.io/b2b-portal/index.html
 
-if you do, to avoid CORS errors launch chrome with the following command:
+if you do, to avoid CORS errors launch chrome with disable-web-security command:
 
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp  https://dinavinter.github.io/b2b-portal/index.html
 
