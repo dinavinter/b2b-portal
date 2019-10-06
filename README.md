@@ -37,5 +37,20 @@ To avoid CORS errors (auth token call) launch chrome with the following command:
 * Go to "Client config"
     * set your apiKey and domain 
     * press "save" 
+    
+    
+    
+** delgated admin flow **  
+*Invite new user to organization and assoiate with delgated admin role using plainId console.
+*Go to test page and login with the password you got through invitation email
+*Press on organization managment 
+*You should be redirected to plain id console in organization scop
+
+** view assets **  
+*Invite new user to organization and assoiate with role that linked to a policy using plainId console.
+*Go to test page and login with the password you got through invitation email
+*Press on get assets
+*You view user assets 
+
 
 
