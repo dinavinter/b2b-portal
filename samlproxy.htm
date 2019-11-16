@@ -7,29 +7,26 @@
 
     <link rel="stylesheet" href="style.css"/>
 
-    <script type="module">
-        import  {clientCfg} from "./scripts/configuration";
-        import samlJS from `https://cdns.gigya.com/js/gigya.saml.js?apiKey=${clientCfg.apiKey}`
-        samlJS.idpLoginUrl= './index.html'
-        
-        
-</script>
+    <script  >
+         const urlParams = new URLSearchParams(window.location.search);
+         const apiKey = urlParams.get('apiKey');
+         // samlJS.idpLoginUrl= './index.html'
+
+         var samlJS = `https://cdns.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
+         var eScript = document.createElement("script");
+         eScript.innerHTML=
+         eScript.src = samlJS;
+         eScript.innerHTML="{loginURL:'./index.html'}"
+         document.head.appendChild(eScript);
+
+
+    </script>
 
 </head> 
 <body>
 <div id="container"></div>
 <script>
-    gigya.socialize.addEventHandlers({
-        onLogin: function() {
-            gigya.fidm.saml.continueSSO();
-        }
-    });
-
-    gigya.accounts.showScreenSet({
-        screenSet: 'Default-RegistrationLogin',
-        containerID: "container",
-        sessionExpiration: '20000'
-    });
+     
 </script>
 </body>
 </html>
