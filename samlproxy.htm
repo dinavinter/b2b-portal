@@ -10,8 +10,7 @@
     <script  >
          const urlParams = new URLSearchParams(window.location.search);
          const apiKey = urlParams.get('apiKey');
-         // samlJS.idpLoginUrl= './index.html'
-
+ 
          var samlJS = `https://cdns.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
          var eScript = document.createElement("script");
          eScript.src= samlJS;
