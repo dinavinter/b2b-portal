@@ -15,7 +15,7 @@
          var samlJS = `https://cdns.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
          var eScript = document.createElement("script");
          eScript.src= samlJS;
-         eScript.innerHTML='{loginURL:"/index.html"}';
+         eScript.innerHTML='{loginURL:"./index.html", logoutURL:"./index.html"}';
 
 
     document.head.appendChild(eScript);
