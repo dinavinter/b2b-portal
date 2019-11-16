@@ -17,6 +17,7 @@
  
         import {getAssets} from './scripts/authorization.js';        
         window.getAssets = getAssets;
+        window.openSP = openSP;
         
         if (typeof gigya != "undefined") {
             load();
@@ -51,9 +52,14 @@
                 console.log(err);
                 showRegistration();
             });
-            
-             
 
+           
+
+        }
+        
+        function openSP(spName) {
+            gigya.fidm.saml.initSSO(  {spName:spName, redirectURL:'https://dinavinter.github.io/b2b-portal/index.html'});
+            
         }
 
 
@@ -65,8 +71,8 @@
 <body>
 
 <div class="topnav">
-    <a href="#screens" class="header">screens</a>
-
+   <a href="#menu" class="header">menu</a>
+    <a href="./configuration.html" style="background-color:darkslategray">Client config</a>
     <a onclick="showRegistration()" href="javascript:void(0);">Login</a>
     <a onClick="getAssets(document.getElementById('div'))" href="javascript:void(0);">Assets</a>
     <a onClick="openDelegatedAdmin()" href="javascript:void(0);"> Manage organization</a>
@@ -79,8 +85,11 @@
     -->
 
 </div>
-<div class="sidebar"> 
-     <a href="./configuration.html" style="background-color:darkslategray">Client config</a>
+<div class="sidebar">
+    <a href="#apps" class="header">apps</a>
+
+    <a onclick="openSP('IAMShowcase')" href="javascript:void(0);" style="background-color:darkslategray">SP- IAMShowcase</a>
+     <a onclick="openSP('samltest.id')" href="javascript:void(0);" style="background-color:darkslategray">SP- samltest.id</a>
 </div>
 
 
