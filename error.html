@@ -11,7 +11,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
         const container = document.getElementById("container");
-        container.error = error;
+        container.innerHTML =`<pre>${error}</pre>`;
  
 
     </script>
