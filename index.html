@@ -33,14 +33,20 @@
             var orgId = org["orgId"];
             var eOrdId = document.getElementById("logged-in-txt");
             eOrdId.innerText = `You are logged in to organization ${orgId}`;
- 
+              
 
         } 
 
         function load() {
 
             gigya.accounts.addEventHandlers({onLogin: loggedin});
-
+       
+            gigya.socialize.addEventHandlers({
+                onLogin: function() {
+                    gigya.fidm.saml.continueSSO();
+                }
+            });
+            
             loggedin( ).catch(err => {
                 console.log(err);
                 showRegistration();
