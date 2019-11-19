@@ -7,17 +7,19 @@
 
     <link rel="stylesheet" href="style.css"/>
 
-    <script  >
-         const urlParams = new URLSearchParams(window.location.search);
-         const apiKey = urlParams.get('apiKey');
- 
-         var samlJS = `https://cdns.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
+    <script type="module" >
+        import {clientCfg } from "./configuration.js";
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const apiKey = urlParams.get('apiKey');
+        const domain= clientCfg.domain ?? "us1";
+         var samlJS = `https://cdns.${domain}.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
          var eScript = document.createElement("script");
          eScript.src= samlJS;
          eScript.innerHTML='{loginURL:"./index.html", logoutURL:"./index.html"}';
 
 
-    document.head.appendChild(eScript);
+           document.head.appendChild(eScript);
 
 
     </script>
