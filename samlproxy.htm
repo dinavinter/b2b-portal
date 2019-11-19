@@ -12,7 +12,11 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const apiKey = urlParams.get('apiKey');
-        const domain= clientCfg.domain ?? "us1";
+        var domain= clientCfg.domain  ;
+        if(!domain)
+        {
+            domain = "us1"
+        }
          var samlJS = `https://cdns.${domain}.gigya.com/js/gigya.saml.js?apiKey=${apiKey}`;
          var eScript = document.createElement("script");
          eScript.src= samlJS;
