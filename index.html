@@ -10,14 +10,17 @@
     <title>B2B Test</title>
     <script type="module" src="./scripts/loadGigya.js"></script>
     <script type="module" src="./scripts/authorization.js"></script> 
+    <script type="module" src="./scripts/configuration.js"></script> 
     <script type="text/javascript" src="./scripts/screens.js"></script>
 
          
     <script type="module">
  
         import {getAssets} from './scripts/authorization.js';        
+        import {clientCfg} from './scripts/configuration.js';        
         window.getAssets = getAssets;
         window.openSP = openSP;
+        window.clientCfg = clientCfg;
         
         if (typeof gigya != "undefined") {
             load();
@@ -66,8 +69,8 @@
 
 <div class="topnav">
     <a href="./configuration.html" style="background-color:darkslategray">Client config</a>
-    <a onclick="showRegistration()" href="javascript:void(0);">Login</a>
-    <a onClick="getAssets(document.getElementById('div'))" href="javascript:void(0);">Assets</a>
+    <a onclick="showRegistration()" href="javascript:void(0);">Login</a> 
+    <a onClick="getAssets(null, document.getElementById('div'))" href="javascript:void(0);">Assets</a>
     <a onClick="openDelegatedAdmin()" href="javascript:void(0);"> Manage organization</a>
     <a onclick="showSelfRegistration()" href="javascript:void(0);">Request organization</a>
     <a onclick="showAccountJson()" href="javascript:void(0);">Show account as json</a>
@@ -81,8 +84,29 @@
 <div class="sidebar">
     <a href="#apps" class="header">apps</a>
 
-    <a  href="./sp.html?spName=IAMShowcase" style="background-color:darkslategray"  target="_blank">SP- IAMShowcase</a>
-     <a href="./sp.html?spName=samltest.id" style="background-color:darkslategray"  target="_blank">SP- samltest.id</a>
+    <div  style="background-color:darkslategray" >
+        <label > portal </label>
+         <a onClick="getAssets('WSNJHFIH7JOHCDKHACXC',document.getElementById('div'))" href="javascript:void(0);">Assets</a>
+    </div>
+    
+    <div  style="background-color:darkslategray" >
+    <label forg> orders </label>
+    <a  href="./sp.html?spName=orders"  target="_blank">SP</a>
+    <a onClick="getAssets('RKQ7U6HFKBA7S97BQKEN',document.getElementById('div'))" href="javascript:void(0);">Assets</a>
+    </div>
+
+    <div  style="background-color:darkslategray" >
+    <label  > eLearning </label>
+    <a href="./sp.html?spName=eLearning"  target="_blank">SP</a>
+    <a onClick="getAssets('G4RXL4NR0GJVSJXTCEHH',document.getElementById('div'))" href="javascript:void(0);">Assets</a>
+    </div>
+
+    <div  style="background-color:darkslategray" >
+        <label > eCommerce </label>
+         <a onClick="getAssets('FVO2CIUIZDH8UPUPKNW0',document.getElementById('div'))" href="javascript:void(0);">Assets</a>
+    </div>
+
+
 </div>
 
 

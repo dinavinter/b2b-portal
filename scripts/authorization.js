@@ -3,20 +3,24 @@ import {clientCfg} from "./configuration.js";
 import './crypto-js.js'
 // import {fetch} from 'https://polyfill.io/v3/polyfill.js?features=fetch-polyfill';
  
-export async function getAssets(container) {
+export async function getAssets(appId, container) {
 
     //get account 
     var account = await loadAccount();
 
+    if(!appId)
+    {
+        appId= clientCfg.portal
+    }
     //set org id welcome text
     var org = account["groups"]["organizations"][0];
     var orgId = org["orgId"];
     var uid = account["UID"];
  
     //get portal application assets
-    var auth = await authorizationToken(clientCfg.portal, orgId, uid);
+    var auth = await authorizationToken(appId, orgId, uid);
     var assets = auth.assets.templates;
-    container.innerHTML = `<pre> app: ${clientCfg.portal} </br> organization: ${orgId} </br>assets:</br>${JSON.stringify(assets, undefined, 2)}</pre>`;
+    container.innerHTML = `<pre> app: ${appId} </br> organization: ${orgId} </br>assets:</br>${JSON.stringify(assets, undefined, 2)}</pre>`;
 
 
 }
