@@ -12,7 +12,7 @@ export async function getAssets(appId, container) {
         appId:appId ,
         callback: function(e) {
             console.log(e);
-            container.innerHTML = ` </br>assets:</br>${JSON.stringify(e, undefined, 2)}</pre>`;
+            container.innerHTML = ` </br>assets:</br>${JSON.stringify(e.allowedAssets, undefined, 2)}</pre>`;
 
         }
     });
