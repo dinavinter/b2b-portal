@@ -3,7 +3,39 @@ import {clientCfg} from "./configuration.js";
 import './crypto-js.js'
 // import {fetch} from 'https://polyfill.io/v3/polyfill.js?features=fetch-polyfill';
  
+
+ 
 export async function getAssets(appId, container) {
+
+    //get account 
+    var account = await loadAccount();
+
+    if(!appId)
+    {
+        appId= clientCfg.portal
+    }
+    //set org id welcome text
+    var org = account?.groups?.organizations?[0];
+    var orgId = org.orgId;
+    var uid = account.UID;
+ 
+    //get portal application assets
+    gigya.accounts.b2b.auth.getAssets({
+       appId:appId ,
+       callback: function(e) {
+             console.log(e);
+             var assets = e?.assets?.templates;
+             container.innerHTML = `<pre> app: ${appId} </br> organization: ${orgId} </br>assets:</br>${JSON.stringify(e, undefined, 2)}</pre>`;
+
+       }
+     });
+
+
+}
+ 
+ 
+
+export async function getAssets_old(appId, container) {
 
     //get account 
     var account = await loadAccount();
