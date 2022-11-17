@@ -28,7 +28,7 @@ export async function getAssets(appId, container) {
  
 
 function  authorizationToken(app, orgId, uid) {
-    const url = `https://cors-proc.herokuapp.com/avoid-cors/${clientCfg.plainId}/runtime/${clientCfg.apiKey}/authorization/token/${app}`;
+    const url = `https://${clientCfg.plainId}/runtime/${clientCfg.apiKey}/authorization/token/${app}`;
     const body = {
         "identity": {
             "type": "user",
