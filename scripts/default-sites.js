@@ -1,5 +1,26 @@
  
 export const sites = {
+ 
+    igal_demo:{
+            clientId: "xbq0SRpPjh0n0EbAS1VGWjMy0Cdr6mHS",
+            clientSecret: "cjBZbEtCamNfeEFfUXYzdFE2V05KT2FBdU5RWlpVZzRKUldZRWpJMG5ZMkJkQ0h3",
+            portal: "PPPQ6CTTUG11IEBA3BMK",
+            domain: "eu1",
+            apiKey: "4__c3hnY47eiWhgwAycUtaCA",
+            plainId: "igalb2b.us1.b2b-gigya.com"
+
+    
+    },
+     igal_portal:{
+            clientId: "xbq0SRpPjh0n0EbAS1VGWjMy0Cdr6mHS",
+            clientSecret: "cjBZbEtCamNfeEFfUXYzdFE2V05KT2FBdU5RWlpVZzRKUldZRWpJMG5ZMkJkQ0h3",
+            portal: "PXH1HS0KMWIM2PEDHMIM",
+            domain: "eu1",
+            apiKey: "4_4tFAv0nyjFwBctOZOAhSSQ",
+            plainId: "igalb2b.us1.b2b-gigya.com"
+
+    
+    },
     presales:
         {
             clientId: "0evun2M3mvCW6uuuIMIVBc8JYEIt2wCd",
